@@ -119,3 +119,57 @@ Apply similar logic per `Employment_Status` group to maintain realism.
 Let me know if you'd like code or more detailed implementation steps.
    
 </details>
+
+
+-----------------------------------------
+<details>  
+
+<details> 
+
+Step 3: Detect patterns and risk factors
+With a cleaned dataset, your next goal is to uncover patterns and key risk factors that influence delinquency.
+
+What to do:
+
+Analyze relationships between variables and delinquency outcomes (e.g., is high credit utilization associated with missed payments?).
+Use GenAI tools to help surface insights and prioritize key variables.
+Highlight any unexpected findings that may require further investigation by the analytics team.
+Document key risk indicators and any insights that could impact delinquency prediction. Include patterns that seem obvious as well as any surprising trends that might need deeper investigation.
+Action: List high-risk indicators, each with a one-sentence explanation of why it’s important, as well as any insights that could impact delinquency prediction.
+
+</details>
+
+
+### 🚨 High-Risk Indicators for Delinquency
+
+| Risk Indicator              | Why It Matters |
+|-----------------------------|---------------|
+| High Credit Utilization     | Customers using a high percentage of their available credit are more likely to miss payments due to financial strain. |
+| Multiple Missed Payments    | A history of missed payments is the strongest direct predictor of future delinquency. |
+| Low Credit Score            | Lower credit scores indicate past financial issues and higher risk of default. |
+| Unemployed or Self-Employed | Income instability increases the likelihood of payment difficulties. |
+| Short Account Tenure        | Newer customers lack a established payment history, making risk harder to assess. |
+| High Debt-to-Income Ratio   | Customers with high debt relative to income have less disposable income to make payments. |
+
+---
+
+### 🔍 Key Insights & Unexpected Findings
+
+- **Younger customers with high income** sometimes show high delinquency—may indicate irresponsible spending despite high earnings.
+- **Some retirees with low income but high credit scores** remain low-risk—suggesting credit history matters more than current income for this group.
+- **“Business” credit card holders** show mixed risk—may depend on business revenue stability not captured in personal income.
+- **Customers with very low (0.05) credit utilization** still sometimes delinquent—suggesting possible dormant accounts or unusual spending patterns.
+
+---
+
+### ⚠️ Note for Further Investigation
+
+- **Credit Utilization > 1.0**: May indicate data errors or extreme debt—requires validation.
+- **Debt-to-Income Ratio = 0.1**: Repeating value suggests possible placeholder entries—needs review.
+- **Geographic patterns**: Certain cities (e.g., Phoenix, Chicago) show higher delinquency rates—may reflect economic factors.
+
+Let me know if you'd like a correlation matrix or predictive importance chart next.
+
+
+
+</details>
