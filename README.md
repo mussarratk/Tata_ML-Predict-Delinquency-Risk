@@ -2,6 +2,23 @@
 
 <details>
 
+<details>
+
+Prompts to try:
+
+Summarize key patterns, outliers, and missing values in this dataset. Highlight any fields that might present problems for modeling delinquency.
+Identify the top 3 variables most likely to predict delinquency based on this dataset. Provide brief reasoning.
+Action: 
+
+Document your findings in bullet points for your report. Focus on:
+
+Notable missing or inconsistent data
+Key anomalies
+Early indicators of delinquency risk
+Then, write a short paragraph (3–5 sentences) summarizing your initial data quality observations.
+   
+</details>
+
 ### 🔍 Data Quality & Pattern Summary
 
 ---
