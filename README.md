@@ -66,3 +66,56 @@ Then, write a short paragraph (3–5 sentences) summarizing your initial data qu
 The dataset contains several missing values in `Income` and `Loan_Balance`, which may require imputation or exclusion. Inconsistencies in `Employment_Status` capitalization should be standardized. Anomalies like `Credit_Utilization` values above 1.0 and repeated `Debt_to_Income_Ratio` values of 0.1 suggest possible data entry errors or imputation. Key predictors like `Missed_Payments`, `Credit_Utilization`, and recent payment history show strong potential for forecasting delinquency. Overall, the data is moderately clean but requires preprocessing for reliable modeling.
   
 </details>
+
+-----------------
+<details>
+
+<details>
+
+Prompts to try:
+
+Suggest an imputation strategy for missing values in this dataset based on industry best practices.
+Propose best-practice methods to handle missing credit utilization data for predictive modeling.
+Generate realistic synthetic income values for missing entries using normal distribution assumptions.
+Action: Create a simple table listing 2–3 missing data issues. For each one, include your chosen handling method and a one-line justification for why you selected it.
+   
+</details>
+
+
+### 📊 Missing Data Imputation Strategy
+
+| Missing Field         | Handling Method                          | Justification |
+|-----------------------|------------------------------------------|---------------|
+| Income                | Impute using median income by Employment_Status and Age group | Reduces bias and maintains distribution within demographic segments. |
+| Loan_Balance          | Impute with 0 (if logical) or median by Credit_Card_Type | Assumes missing values may indicate no loan or uses typical values per card type. |
+| Credit_Utilization    | Impute with median by Credit_Score bucket | Maintains relationship between credit health and utilization behavior. |
+
+---
+
+### 💡 Best-Practice Methods for Handling Missing Credit Utilization Data
+
+- Use **multiple imputation by chained equations (MICE)** if missingness is MAR (Missing At Random).
+- Alternatively, **impute with median/mean within segments** (e.g., by Credit_Score, Income bracket) to preserve correlations.
+- Consider adding a **missingness indicator flag** to capture potential informative missingness.
+
+---
+
+### 📈 Synthetic Income Generation Using Normal Distribution
+
+Assuming income is roughly normally distributed within employment categories:
+
+```python
+# Example for employed individuals:
+mean_income_employed = 100000
+std_income_employed = 30000
+
+synthetic_income = np.random.normal(mean_income_employed, std_income_employed, size=number_of_missing)
+```
+
+Apply similar logic per `Employment_Status` group to maintain realism.
+
+---
+
+Let me know if you'd like code or more detailed implementation steps.
+   
+</details>
